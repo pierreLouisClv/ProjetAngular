@@ -1,0 +1,157 @@
+{
+  "teams": [
+    {
+      "team": "Paris Saint-Germain",
+      "played": 10,
+      "wins": 8,
+      "draws": 1,
+      "losses": 1,
+      "goalsFor": 30,
+      "goalsAgainst": 10
+    },
+    {
+      "team": "Olympique de Marseille",
+      "played": 10,
+      "wins": 7,
+      "draws": 2,
+      "losses": 1,
+      "goalsFor": 25,
+      "goalsAgainst": 12
+    },
+    {
+      "team": "Lyon",
+      "played": 10,
+      "wins": 6,
+      "draws": 3,
+      "losses": 1,
+      "goalsFor": 22,
+      "goalsAgainst": 15
+    },
+    {
+      "team": "AS Monaco",
+      "played": 10,
+      "wins": 6,
+      "draws": 2,
+      "losses": 2,
+      "goalsFor": 21,
+      "goalsAgainst": 13
+    },
+    {
+      "team": "Lille OSC",
+      "played": 10,
+      "wins": 5,
+      "draws": 3,
+      "losses": 2,
+      "goalsFor": 19,
+      "goalsAgainst": 14
+    },
+    {
+      "team": "AS Saint-Étienne",
+      "played": 10,
+      "wins": 4,
+      "draws": 4,
+      "losses": 2,
+      "goalsFor": 17,
+      "goalsAgainst": 15
+    },
+    {
+      "team": "OGC Nice",
+      "played": 10,
+      "wins": 4,
+      "draws": 3,
+      "losses": 3,
+      "goalsFor": 18,
+      "goalsAgainst": 16
+    },
+    {
+      "team": "Girondins de Bordeaux",
+      "played": 10,
+      "wins": 3,
+      "draws": 4,
+      "losses": 3,
+      "goalsFor": 14,
+      "goalsAgainst": 15
+    },
+    {
+      "team": "Toulouse FC",
+      "played": 10,
+      "wins": 3,
+      "draws": 3,
+      "losses": 4,
+      "goalsFor": 13,
+      "goalsAgainst": 18
+    },
+    {
+      "team": "RC Lens",
+      "played": 10,
+      "wins": 2,
+      "draws": 4,
+      "losses": 4,
+      "goalsFor": 12,
+      "goalsAgainst": 17
+    },
+    {
+      "team": "Nantes",
+      "played": 10,
+      "wins": 2,
+      "draws": 3,
+      "losses": 5,
+      "goalsFor": 11,
+      "goalsAgainst": 19
+    },
+    {
+      "team": "Angers SCO",
+      "played": 10,
+      "wins": 2,
+      "draws": 3,
+      "losses": 5,
+      "goalsFor": 10,
+      "goalsAgainst": 20
+    },
+    {
+      "team": "Montpellier HSC",
+      "played": 10,
+      "wins": 2,
+      "draws": 2,
+      "losses": 6,
+      "goalsFor": 14,
+      "goalsAgainst": 22
+    },
+    {
+      "team": "Dijon FCO",
+      "played": 10,
+      "wins": 2,
+      "draws": 1,
+      "losses": 7,
+      "goalsFor": 10,
+      "goalsAgainst": 24
+    },
+    {
+      "team": "Amiens SC",
+      "played": 10,
+      "wins": 1,
+      "draws": 3,
+      "losses": 6,
+      "goalsFor": 11,
+      "goalsAgainst": 23
+    },
+    {
+      "team": "FC Metz",
+      "played": 10,
+      "wins": 1,
+      "draws": 2,
+      "losses": 7,
+      "goalsFor": 9,
+      "goalsAgainst": 26
+    },
+    {
+      "team": "Strasbourg",
+      "played": 10,
+      "wins": 0,
+      "draws": 4,
+      "losses": 6,
+      "goalsFor": 8,
+      "goalsAgainst": 29
+    }
+  ]
+}
