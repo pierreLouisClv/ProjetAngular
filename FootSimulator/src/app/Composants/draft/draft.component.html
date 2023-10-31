@@ -1,0 +1,89 @@
+<div class="background">
+
+  <div *ngIf="equipe.getAttaquantsGauche().nom=='';else elseBlock">
+    <button (click)="moveToChoixJoueur('attaquant','Gauche',11)">Ajouter attaquants gauche</button>
+  </div>
+  <ng-template #elseBlock>
+    <p class="text-success">{{equipe.getAttaquantsGauche().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getAttaquantsPointe().nom=='';else elseBlock2">
+    <button (click)="moveToChoixJoueur('attaquant','Pointe',11)">Ajouter attaquants pointe</button>
+  </div>
+  <ng-template #elseBlock2>
+    <p class="text-success">{{equipe.getAttaquantsPointe().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getAttaquantsDroit().nom=='';else elseBlock3">
+    <button (click)="moveToChoixJoueur('attaquant','Droit',11)">Ajouter attaquants droit</button>
+  </div>
+  <ng-template #elseBlock3>
+    <p class="text-success">{{equipe.getAttaquantsDroit().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getMilieuGauche().nom=='';else elseBlock4">
+    <button (click)="moveToChoixJoueur('milieuDeTerrain','Gauche',9)">Ajouter milieu gauche</button>
+  </div>
+  <ng-template #elseBlock4>
+    <p class="text-success">{{equipe.getMilieuGauche().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getMilieuCentral().nom=='';else elseBlock5">
+    <button (click)="moveToChoixJoueur('milieuDeTerrain','Central',9)">Ajouter milieu central</button>
+  </div>
+  <ng-template #elseBlock5>
+    <p class="text-success">{{equipe.getMilieuCentral().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getMilieuDroit().nom=='';else elseBlock6">
+    <button (click)="moveToChoixJoueur('milieuDeTerrain','Droit',9)">Ajouter milieu droit</button>
+  </div>
+  <ng-template #elseBlock6>
+    <p class="text-success">{{equipe.getMilieuDroit().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getDefenseurCentralDroit().nom=='';else elseBlock7">
+    <button (click)="moveToChoixJoueur('defenseurCentral','Droit',7)">Ajouter Defenseur central droit</button>
+  </div>
+  <ng-template #elseBlock7>
+    <p class="text-success">{{equipe.getDefenseurCentralDroit().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getDefenseurCentralGauche().nom=='';else elseBlock8">
+    <button (click)="moveToChoixJoueur('defenseurCentral','Gauche',7)">Ajouter Defenseur central Gauche</button>
+  </div>
+  <ng-template #elseBlock8>
+    <p class="text-success">{{equipe.getDefenseurCentralGauche().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getDefenseurDroit().nom=='';else elseBlock9">
+    <button (click)="moveToChoixJoueur('defenseurDroit','None',5)">Ajouter Defenseur droit</button>
+  </div>
+  <ng-template #elseBlock9>
+    <p class="text-success">{{equipe.getDefenseurDroit().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getDefenseurGauche().nom=='';else elseBlock10">
+    <button (click)="moveToChoixJoueur('defenseurGauche','None',5)">Ajouter Defenseur Gauche</button>
+  </div>
+  <ng-template #elseBlock10>
+    <p class="text-success">{{equipe.getDefenseurGauche().nom}}</p>
+  </ng-template>
+
+  <div *ngIf="equipe.getGardien().nom=='';else elseBlockG">
+    <button (click)="moveToChoixJoueur('gardien','',11)">Ajouter Gardien</button>
+  </div>
+  <ng-template #elseBlockG>
+    <p class="text-success">{{equipe.getGardien().nom}}</p>
+  </ng-template>
+
+  <ul *ngFor="let joueur of equipe.getAllJoueur()">
+    <li class="text-white">{{joueur.nom}} {{joueur.position}} {{joueur.precision}}</li>
+  </ul>
+  {{equipe.getGardien().nom}}
+</div>
+
+
+
+
+
