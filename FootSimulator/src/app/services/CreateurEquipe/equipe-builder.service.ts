@@ -5,12 +5,14 @@ import {EquipeComponent} from "../../Composants/Model/equipe/equipe.component";
   providedIn: 'root'
 })
 export class EquipeBuilderService {
-  public equipe:EquipeComponent;
+  public equipe: EquipeComponent;
+
   constructor() {
     this.equipe = new EquipeComponent();
   }
 
-  getEquipe():EquipeComponent{
+  getEquipe(): EquipeComponent {
     return this.equipe
+
   }
 }

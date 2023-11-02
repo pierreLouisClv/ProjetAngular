@@ -15,6 +15,7 @@ export class RandomJoueurService {
     let idAlreadyUsed:number[]=[];
     let joueurs:JoueurComponent[]=[];
     let idAlreadyChose =  this.equipebuilder.getEquipe().getAllIdByPosition(poste);
+
     for(let i=0;i<4;i++){
       let randomId = this.getRandomNumber(1,nbJoueur+1);
       while(idAlreadyUsed.includes(randomId) || idAlreadyChose.includes(randomId)){

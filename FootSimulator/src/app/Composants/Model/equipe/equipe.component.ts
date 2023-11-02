@@ -75,12 +75,12 @@ export class EquipeComponent {
         allId.push(joueur.getId())
       }
     }
-    else if("milieuDeTerrain"){
+    else if(position=="milieuDeTerrain"){
       for(let joueur of this.getAllMilieux()){
         allId.push(joueur.getId())
       }
     }
-    else if("defenseurCentral"){
+    else if(position=="defenseurCentral"){
       for(let joueur of this.getAllDefenseursCentraux()){
         allId.push(joueur.getId())
       }
@@ -89,6 +89,20 @@ export class EquipeComponent {
       return allId
     }
     return allId
+  }
+
+  clean():void{
+  this.gardien= new JoueurComponent();
+  this.defenseurGauche= new JoueurComponent();
+  this.defenseurDroit=new JoueurComponent();
+  this.defenseursCentralGauche=new JoueurComponent();
+  this.defenseursCentralDroit=new JoueurComponent();
+  this.milieuCentral=new JoueurComponent();
+  this.milieuDroit=new JoueurComponent();
+  this.milieuGauche=new JoueurComponent();
+  this.attaquantsPointe=new JoueurComponent();
+  this.attaquantsDroit=new JoueurComponent();
+  this.attaquantsGauche=new JoueurComponent();
   }
 
   getGardien(): JoueurComponent {

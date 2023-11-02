@@ -69,6 +69,10 @@ equipe:EquipeComponent;
     this.router.navigate(['/choix',position,precision,nbJoueur])
   }
 
+  repeat(){
+    this.equipebuilder.getEquipe().clean()
+  }
+
 
 
 
