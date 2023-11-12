@@ -1,81 +1,85 @@
-import {Component, EventEmitter, Injectable, Input, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {JoueurComponent} from "../Model/joueur/joueur.component";
-import {EquipeComponent} from "../Model/equipe/equipe.component";
 import {DataService} from "../../services/data-service/data.service";
-import {EquipeBuilderService} from "../../services/CreateurEquipe/equipe-builder.service";
+import {TeamBuilderService} from "../../services/team-builder-service/team-builder.service";
+import {RatingService} from "../../services/rating-service/rating.service";
+import {Player} from "../../Model/Player";
 
 @Component({
-  selector: 'app-draft',
-  templateUrl: './draft.component.html',
-  styleUrls: ['./draft.component.scss']
+    selector: 'app-draft',
+    templateUrl: './draft.component.html',
+    styleUrls: ['./draft.component.scss']
 })
 
-export class DraftComponent {
+export class DraftComponent implements OnInit {
 
-equipe:EquipeComponent;
-  constructor(private router: Router, private dataService:DataService, private equipebuilder:EquipeBuilderService) {
-    this.equipe = equipebuilder.getEquipe();
-  }
+    public isVisible: boolean = false;
 
-  ngOnInit():void{
-    let newJoueur = this.dataService.getData();
-    if(newJoueur.nom!=""){
-      if(newJoueur.position=="attaquant"){
-        if(newJoueur.precision=="Gauche"){
-          this.equipe.setAttaquantsGauche(newJoueur)
-        }
-        else if(newJoueur.precision=="Droit"){
-          this.equipe.setAttaquantsDroit(newJoueur)
-        }
-        else{
-
-          this.equipe.setAttaquantsPointe(newJoueur)
-        }
-      }
-      else if(newJoueur.position=="milieuDeTerrain"){
-        if(newJoueur.precision=="Gauche"){
-          this.equipe.setMilieuGauche(newJoueur)
-        }
-        else if(newJoueur.precision=="Droit"){
-          this.equipe.setMilieuDroit(newJoueur)
-        }
-        else{
-          this.equipe.setMilieuCentral(newJoueur)
-        }
-      }
-      else if (newJoueur.position=="defenseurCentral"){
-        if(newJoueur.precision=="Droit"){
-          this.equipe.setDefenseurCentralDroit(newJoueur)
-        }
-        else{
-          this.equipe.setDefenseurCentralGauche(newJoueur)
-        }
-      }
-      else if (newJoueur.position=="defenseurDroit"){
-        this.equipe.setDefenseurDroit(newJoueur)
-      }
-      else if (newJoueur.position=="defenseurGauche"){
-        this.equipe.setDefenseurGauche(newJoueur)
-      }
-      else{
-        this.equipe.setGardien(newJoueur)
-      }
+    constructor(private router: Router, private dataService: DataService, public team: TeamBuilderService, public rating: RatingService) {
     }
 
-  }
+    ngOnInit(): void {
+        let newPlayer = this.dataService.getData();
+        this.addPlayerToTheTeam(newPlayer);
+        this.showRating();
+    }
 
-  moveToChoixJoueur(position:string,precision:string,nbJoueur:number):void{
-    this.router.navigate(['/choix',position,precision,nbJoueur])
-  }
+    private addPlayerToTheTeam(newPlayer: Player): void {
+        if (newPlayer.name != "") {
+            if (newPlayer.position == "attaquant") {
+                if (newPlayer.precision == "Gauche") {
+                    this.team.setLeftStriker(newPlayer)
+                } else if (newPlayer.precision == "Droit") {
+                    this.team.setRightStriker(newPlayer)
+                } else {
 
-  repeat(){
-    this.equipebuilder.getEquipe().clean()
-  }
+                    this.team.setStriker(newPlayer)
+                }
+            } else if (newPlayer.position == "milieuDeTerrain") {
+                if (newPlayer.precision == "Gauche") {
+                    this.team.setLeftMedium(newPlayer)
+                } else if (newPlayer.precision == "Droit") {
+                    this.team.setRightMedium(newPlayer)
+                } else {
+                    this.team.setCentralMedium(newPlayer)
+                }
+            } else if (newPlayer.position == "defenseurCentral") {
+                if (newPlayer.precision == "Droit") {
+                    this.team.setRightCentreBack(newPlayer)
+                } else {
+                    this.team.setLeftCentreBack(newPlayer)
+                }
+            } else if (newPlayer.position == "defenseurDroit") {
+                this.team.setRightBack(newPlayer)
+            } else if (newPlayer.position == "defenseurGauche") {
+                this.team.setLeftBack(newPlayer)
+            } else {
+                this.team.setGoalkeeper(newPlayer)
+            }
+        }
+    }
 
+    private showRating(): void {
+        if (this.team.isTeamComplete()) {
+            this.showModal();
+        }
+    }
 
+    public moveToChoixJoueur(position: string, precision: string, nbPlayer: number): void {
+        this.router.navigate(['/choix', position, precision, nbPlayer])
+    }
 
+    public repeat(): void {
+        this.team.clean()
+    }
 
+    private showModal(): void {
+        this.isVisible = true;
+    }
+
+    public hideModal(): void {
+        this.isVisible = false;
+    }
 
 
 }

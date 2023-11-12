@@ -1,20 +1,19 @@
-import { Injectable } from '@angular/core';
-import {JoueurComponent} from "../../Composants/Model/joueur/joueur.component";
+import {Injectable} from '@angular/core';
+import {Player} from "../../Model/Player";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class DataService {
 
-  joueur:JoueurComponent=new JoueurComponent()
-  constructor() { }
+    private player: Player = new Player()
 
-  sendData(newJoueur:JoueurComponent):void{
-    this.joueur=newJoueur;
-  }
+    public sendData(newJoueur: Player): void {
+        this.player = newJoueur;
+    }
 
-  getData():JoueurComponent{
-    return this.joueur
-  }
+    public getData(): Player {
+        return this.player
+    }
 
 }

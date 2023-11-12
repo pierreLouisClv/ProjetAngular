@@ -1,179 +1,232 @@
 <div class="background">
-  <div class="container pt-4">
-    <div class="row pb-4">
-      <div class="col-4 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getAttaquantsGauche().nom=='';else elseBlock">
-          <button (click)="moveToChoixJoueur('attaquant','Gauche',11)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>AG</h4>
-          </button>
+    <div class="container pt-4">
+        <div class="row pb-2">
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div class=" d-flex align-items-center justify-content-start">
+                </div>
+                <div *ngIf="team.leftStriker.name=='';else elseBlock">
+                    <button (click)="moveToChoixJoueur('attaquant','Gauche',11)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>AG</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock>
+                    <div>
+                        <img src='{{team.leftStriker.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.leftStriker.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.striker.name=='';else elseBlock2">
+                    <button (click)="moveToChoixJoueur('attaquant','Pointe',11)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>BU</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock2>
+                    <div>
+                        <img src='{{team.striker.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.striker.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.rightStriker.name=='';else elseBlock3">
+                    <button (click)="moveToChoixJoueur('attaquant','Droit',11)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>AD</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock3>
+                    <div>
+                        <img src='{{team.rightStriker.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.rightStriker.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
         </div>
-        <ng-template #elseBlock>
-          <p class="text-success">{{equipe.getAttaquantsGauche().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-4 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getAttaquantsPointe().nom=='';else elseBlock2" >
-          <button (click)="moveToChoixJoueur('attaquant','Pointe',11)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>BU</h4>
-          </button>
+        <div class="row pt-2 pb-2">
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.leftMedium.name=='';else elseBlock4">
+                    <button (click)="moveToChoixJoueur('milieuDeTerrain','Gauche',9)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>MC</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock4>
+                    <div>
+                        <img src='{{team.leftMedium.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.leftMedium.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.centralMedium.name=='';else elseBlock5">
+                    <button (click)="moveToChoixJoueur('milieuDeTerrain','Central',9)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>MC</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock5>
+                    <div>
+                        <img src='{{team.centralMedium.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.centralMedium.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.rightMedium.name=='';else elseBlock6">
+                    <button (click)="moveToChoixJoueur('milieuDeTerrain','Droit',9)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>MC</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock6>
+                    <div>
+                        <img src='{{team.rightMedium.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.rightMedium.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
         </div>
-        <ng-template #elseBlock2>
-          <p class="text-success">{{equipe.getAttaquantsPointe().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-4 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getAttaquantsDroit().nom=='';else elseBlock3">
-          <button (click)="moveToChoixJoueur('attaquant','Droit',11)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>AD</h4>
-          </button>
+        <div class="row pt-2 pb-2">
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.leftBack.name=='';else elseBlock10">
+                    <button (click)="moveToChoixJoueur('defenseurGauche','None',5)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>DG</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock10>
+                    <div>
+                        <img src='{{team.leftBack.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.leftBack.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.leftCentreBack.name=='';else elseBlock8">
+                    <button (click)="moveToChoixJoueur('defenseurCentral','Gauche',7)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>DC</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock8>
+                    <div>
+                        <img src='{{team.leftCentreBack.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.leftCentreBack.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.rightCentreBack.name=='';else elseBlock7">
+                    <button (click)="moveToChoixJoueur('defenseurCentral','Droit',7)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>DC</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock7>
+                    <div>
+                        <img src='{{team.rightCentreBack.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.rightCentreBack.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-3 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.rightBack.name=='';else elseBlock9">
+                    <button (click)="moveToChoixJoueur('defenseurDroit','None',5)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>DD</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlock9>
+                    <div>
+                        <img src='{{team.rightBack.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.rightBack.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
         </div>
-        <ng-template #elseBlock3>
-          <p class="text-success">{{equipe.getAttaquantsDroit().nom}}</p>
-        </ng-template>
-      </div>
+        <div class="row pt-1 pb-2">
+            <div class="col-4 d-flex justify-content-start">
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div *ngIf="team.goalkeeper.name=='';else elseBlockG">
+                    <button (click)="moveToChoixJoueur('gardien','',10)" class="btn btn-dark bouton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                             class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                        </svg>
+                        <h4>G</h4>
+                    </button>
+                </div>
+                <ng-template #elseBlockG>
+                    <div>
+                        <img src='{{team.goalkeeper.picture}}' alt="photo joueur" class="photo">
+                        <h3 class="namePlayer">{{team.goalkeeper.name}}</h3>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-4 d-flex justify-content-end" data-toggle="tooltip">
+                <button (click)="repeat()" class="btn btn-dark repeat bouton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                         class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                        <path fill-rule="evenodd"
+                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="row pt-4 pb-4">
-      <div class="col-4 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getMilieuGauche().nom=='';else elseBlock4">
-          <button (click)="moveToChoixJoueur('milieuDeTerrain','Gauche',9)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>MC</h4>
-          </button>
+    <div *ngIf="isVisible" class="modal">
+        <div class="modal-content">
+            <span class="close" (click)="hideModal()">&times;</span>
+            <H1 class="text-white pt-3">Félicitation ! ton équipe obtient la note de : <b>{{rating.note}}</b></H1>
         </div>
-        <ng-template #elseBlock4>
-          <p class="text-success">{{equipe.getMilieuGauche().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-4 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getMilieuCentral().nom=='';else elseBlock5">
-          <button (click)="moveToChoixJoueur('milieuDeTerrain','Central',9)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>MC</h4>
-          </button>
-        </div>
-        <ng-template #elseBlock5>
-          <p class="text-success">{{equipe.getMilieuCentral().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-4 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getMilieuDroit().nom=='';else elseBlock6">
-          <button (click)="moveToChoixJoueur('milieuDeTerrain','Droit',9)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>MC</h4>
-          </button>
-        </div>
-        <ng-template #elseBlock6>
-          <p class="text-success">{{equipe.getMilieuDroit().nom}}</p>
-        </ng-template>
-      </div>
     </div>
-    <div class="row pt-4 pb-4">
-      <div class="col-3 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getDefenseurGauche().nom=='';else elseBlock10">
-          <button (click)="moveToChoixJoueur('defenseurGauche','None',5)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>DG</h4>
-          </button>
-        </div>
-        <ng-template #elseBlock10>
-          <p class="text-success">{{equipe.getDefenseurGauche().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-3 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getDefenseurCentralGauche().nom=='';else elseBlock8">
-          <button (click)="moveToChoixJoueur('defenseurCentral','Gauche',7)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>DC</h4>
-          </button>
-        </div>
-        <ng-template #elseBlock8>
-          <p class="text-success">{{equipe.getDefenseurCentralGauche().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-3 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getDefenseurCentralDroit().nom=='';else elseBlock7">
-          <button (click)="moveToChoixJoueur('defenseurCentral','Droit',7)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>DC</h4>
-          </button>
-        </div>
-        <ng-template #elseBlock7>
-          <p class="text-success">{{equipe.getDefenseurCentralDroit().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-3 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getDefenseurDroit().nom=='';else elseBlock9">
-          <button (click)="moveToChoixJoueur('defenseurDroit','None',5)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>DD</h4>
-          </button>
-        </div>
-        <ng-template #elseBlock9>
-          <p class="text-success">{{equipe.getDefenseurDroit().nom}}</p>
-        </ng-template>
-      </div>
-    </div>
-    <div class="row pt-4 pb-4">
-      <div class="col-4">
-      </div>
-      <div class="col-4 d-flex align-items-center justify-content-center">
-        <div *ngIf="equipe.getGardien().nom=='';else elseBlockG">
-          <button (click)="moveToChoixJoueur('gardien','',11)" class="btn btn-dark bouton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-            <h4>G</h4>
-          </button>
-        </div>
-        <ng-template #elseBlockG>
-          <p class="text-success">{{equipe.getGardien().nom}}</p>
-        </ng-template>
-      </div>
-      <div class="col-4 d-flex justify-content-end">
-        <button (click)="repeat()" class="btn btn-dark repeat bouton">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 
