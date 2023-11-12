@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
-import {ChampionshipSimulatorService} from "../../../../services/Championship_Simulation/championship-simulator.service";
+import {Component, OnInit} from '@angular/core';
+import {
+  ChampionshipSimulatorService
+} from "../../../../services/Championship_Simulation/championship-simulator.service";
 import {Match} from "../../../../Models/Simulation/Schedule/Match";
-import {ApiService} from "../../../../services/api.service";
-import {Team} from "../../../../Models/Team";
 
 @Component({
   selector: 'app-championship',
   templateUrl: './championship.component.html',
   styleUrls: ['./championship.component.scss']
 })
-export class ChampionshipComponent {
+export class ChampionshipComponent implements OnInit{
   currentDay:number;
 
   showedMatchs:Match[];
@@ -22,10 +22,11 @@ export class ChampionshipComponent {
     this.isLaunched = false;
   }
   ngOnInit(){
+    console.log("heho")
     this.showTeams();
   }
 
-  showTeams(_dayCounter:number = 0)
+  public showTeams(_dayCounter:number = 0)
   {
     this.isLaunched = true;
     this.showMatchsOfTheCurrentDay(_dayCounter);

@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ApiTestComponent} from "./Composants/api-test/api-test.component";
 import {AppComponent} from "./app.component";
 import {ChampionshipComponent} from "./Composants/Simulator/Renders/championship/championship.component";
+import {DraftComponent} from "./Composants/draft/draft.component";
+import {ChoixJoueurComponent} from "./Composants/player-choice/choix-joueur.component";
 
 const routes: Routes = [
-  {path: 'api', component: ApiTestComponent},
-  {path: 'simulator', component:ChampionshipComponent}
+  {path: 'simulator', component:ChampionshipComponent},
+  {path: 'draft', component: DraftComponent},
+  {path: 'choix/:position/:precision/:nbJoueur', component: ChoixJoueurComponent}
+
+
   //{path:'', redirectTo:'homepage', pathMatch:'full'}
 ];
 

@@ -1,0 +1,30 @@
+<div class="background">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row option">
+            <div class="col-3">
+                <button (click)="playerChoice(player1)" class="btn btn-dark playerCard">
+                    <img src='{{player1.picture}}' alt="photo joueur" class="photo">
+                    <h2 class="namePlayer">{{player1.name}}</h2>
+                </button>
+            </div>
+            <div class="col-3">
+                <button (click)="playerChoice(player2)" class="btn btn-dark playerCard">
+                    <img src='{{player2.picture}}' alt="photo joueur" class="photo">
+                    <h2 class="namePlayer">{{player2.name}}</h2>
+                </button>
+            </div>
+            <div class="col-3">
+                <button (click)="playerChoice(player3)" class="btn btn-dark playerCard">
+                    <img src='{{player3.picture}}' alt="photo joueur" class="photo">
+                    <h2 class="namePlayer">{{player3.name}}</h2>
+                </button>
+            </div>
+            <div class="col-3">
+                <button (click)="playerChoice(player4)" class="btn btn-dark playerCard">
+                    <img src='{{player4.picture}}' alt="photo joueur" class="photo">
+                    <h2 class="namePlayer">{{player4.name}}</h2>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
