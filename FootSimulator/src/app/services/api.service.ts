@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Team} from "../Models/Team";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class ApiService {
   constructor(public http: HttpClient) {
   }
 
-  getTeams(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/teams`);
+  public getTeams(): Observable<Team[]> {
+    return this.http.get<Team[]>(`${this.apiUrl}/teams`);
   }
+
 }

@@ -1,0 +1,33 @@
+<div class="reload">
+  <button class="button" (click)="refreshRanking()">Rafraichir le classement<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+  </svg></button>
+</div>
+<table class="table ranking rounded">
+  <thead>
+  <tr>
+    <td class="headerValues" colspan="2">Nom d'équipe</td>
+    <td class="headerValues">MJ</td>
+    <td class="headerValues">W</td>
+    <td class="headerValues">N</td>
+    <td class="headerValues">D</td>
+    <td class="headerValues">GS</td>
+    <td class="headerValues">GC</td>
+    <td class="headerValues">Dif</td>
+    <td class="headerValues">Points</td>
+  </tr>
+  </thead>
+  <tr class="teamTable" *ngFor="let team of ranking">
+    <td class="teamContainer"><img class="logo" src="{{team.pathLogo}}"></td>
+    <td class="teamName">{{team.name}}</td>
+    <td class="numericValues">{{team.stats.getDaysPlayed()}}</td>
+    <td class="numericValues">{{team.stats.getWins()}}</td>
+    <td class="numericValues">{{team.stats.getDraws()}}</td>
+    <td class="numericValues">{{team.stats.getLooses()}}</td>
+    <td class="numericValues">{{team.stats.getGoalsScored()}}</td>
+    <td class="numericValues">{{team.stats.getGoalsConceded()}}</td>
+    <td class="numericValues">{{team.stats.getGoalsDifference()}}</td>
+    <td class="points">{{team.stats.getPoints()}}</td>
+  </tr>
+</table>

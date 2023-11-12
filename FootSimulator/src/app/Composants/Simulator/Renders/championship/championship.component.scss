@@ -1,0 +1,81 @@
+
+.score{
+  width:35px;
+}
+
+.schedule
+{
+  border: solid;
+  border-radius: 10px;
+  background-color: white;
+  width:90%;
+}
+
+.teamTable{
+  line-height: 20px;
+}
+
+.teamName{
+  font-size :12px;
+  font-weight:bolder
+}
+
+.middle{
+  text-align: center;
+}
+
+.align-left{
+  text-align: left;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.logo{
+  height:40px;
+  width:auto
+}
+
+.button{
+  height:20px;
+  font-size:11px;
+  border-width: 1px;
+  font-weight: bolder;
+  vertical-align: center;
+  text-align: center;
+  padding-top: 0;
+}
+
+.modify{
+  background-color:orange;
+}
+
+.confirm{
+  background-color:green;
+  color:white;
+}
+
+.simulation{
+  background-color:blue;
+  color:white;
+}
+
+.days
+{
+  color :#091C3E;
+  font-size:20px;
+  vertical-align: center;
+}
+
+.jDay
+{
+  margin-bottom:0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}

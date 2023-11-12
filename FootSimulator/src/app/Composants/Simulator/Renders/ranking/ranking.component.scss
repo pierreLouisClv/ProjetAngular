@@ -1,0 +1,55 @@
+.logo{
+  height:22px;
+  width:auto;
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
+}
+
+.teamContainer
+{
+  width:35px;
+}
+
+.teamTable{
+  border:0.5px;
+}
+
+.teamName{
+  font-size :12px;
+  font-weight:bolder;
+  text-align: left;
+}
+
+.numericValues{
+  font-size :12px;
+  text-align: center;
+}
+
+.headerValues{
+  font-size :14px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.points{
+  font-size :14px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.ranking{
+  border:solid;
+  background-color: white;
+}
+
+.reload
+{
+  text-align: right;
+}
+
+.button
+{
+  background-color: #3386FF;
+  color: white;
+  border:none;
+}
