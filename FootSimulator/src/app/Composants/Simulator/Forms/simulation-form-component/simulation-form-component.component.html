@@ -1,10 +1,10 @@
 <form class="mt-2 pt-2 d-flex justify-content-around simulationForm" (ngSubmit)="simulateDays()">
     <p class="txt">Simuler</p>
-  <select id="nbOfDay" name="nbOfDay" [(ngModel)]="nbOfDayToSimulate" class="nbSelector txt" aria-label="Default select example">
+  <select id="nbOfDay" name="nbOfDay" [(ngModel)]="nbOfDayToSimulate" class="nbSelector" aria-label="Default select example">
   <option *ngFor="let dayNb of allDaysNumber" [value]="dayNb">{{dayNb}}</option>
 </select>
   <p class="txt">journées à partir de la</p>
-  <select id="firstDay" name="firstDay" [(ngModel)]="firstDayToSimulate" class="nbSelector txt" aria-label="Default select example">
+  <select id="firstDay" name="firstDay" [(ngModel)]="firstDayToSimulate" class="nbSelector" aria-label="Default select example">
     <option *ngFor="let dayIndex of allDaysNumber" [value]="dayIndex">J{{dayIndex}}</option>
   </select>
   <button class="button" name="Simuler" type="submit">Simuler</button>
