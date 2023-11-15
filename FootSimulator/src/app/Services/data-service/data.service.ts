@@ -8,8 +8,8 @@ export class DataService {
 
   private player: Player = new Player()
 
-  public sendData(newJoueur: Player): void {
-    this.player = newJoueur;
+  public sendData(newPlayer: Player): void {
+    this.player = newPlayer;
   }
 
   public getData(): Player {

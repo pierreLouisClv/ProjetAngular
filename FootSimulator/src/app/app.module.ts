@@ -16,7 +16,7 @@ import {RankingComponent} from './Components/ranking/ranking.component';
 import {HeaderComponent} from './Components/header/header.component';
 import {PlayerCreatorService} from "./Services/player-creator-service/player-creator.service";
 import {DraftComponent} from './Components/draft/draft.component';
-import {ChoixJoueurComponent} from './Components/player-choice/choix-joueur.component';
+import {PlayerChoiceComponent} from './Components/player-choice/player-choice.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RandomPlayerService} from "./Services/random-player-service/random-player.service";
 import {DataService} from "./Services/data-service/data.service";
@@ -35,9 +35,9 @@ import {PresentationBannerComponent} from './Components/presentation-banner/pres
     SimulationFormComponentComponent,
     RankingComponent,
     DraftComponent,
-    ChoixJoueurComponent,
+    PlayerChoiceComponent,
     PresentationBannerComponent,
-    ChoixJoueurComponent,
+    PlayerChoiceComponent,
     HomepageComponent
   ],
   imports: [

@@ -7,24 +7,24 @@ import {RatingService} from "../../Services/rating-service/rating.service";
 
 @Component({
   selector: 'app-player-choice',
-  templateUrl: './choix-joueur.component.html',
-  styleUrls: ['./choix-joueur.component.scss']
+  templateUrl: './player-choice.component.html',
+  styleUrls: ['./player-choice.component.scss']
 })
-export class ChoixJoueurComponent implements OnInit {
+export class PlayerChoiceComponent implements OnInit {
 
   public player1: Player = new Player();
   public player2: Player = new Player();
   public player3: Player = new Player();
   public player4: Player = new Player();
 
-  constructor(private randomJoueur: RandomPlayerService, private route: ActivatedRoute, private router: Router, private dataService: DataService, private rating: RatingService) {
+  constructor(private randomPlayer: RandomPlayerService, private route: ActivatedRoute, private router: Router, private dataService: DataService, private rating: RatingService) {
   }
 
   ngOnInit(): void {
     let position: string = this.route.snapshot.paramMap.get('position') ?? ""
     let precision: string = this.route.snapshot.paramMap.get('precision') ?? ""
     let nbPlayer: number = parseInt(<string>this.route.snapshot.paramMap.get('nbJoueur'));
-    let player: Player[] = this.randomJoueur.getRandomPlayer(position, nbPlayer, precision);
+    let player: Player[] = this.randomPlayer.getRandomPlayer(position, nbPlayer, precision);
     this.player1 = player[0];
     this.player2 = player[1];
     this.player3 = player[2];

@@ -19,7 +19,7 @@ export class DraftComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let newPlayer = this.dataService.getData();
+    let newPlayer:Player = this.dataService.getData();
     this.addPlayerToTheTeam(newPlayer);
     this.showRating();
   }
@@ -65,7 +65,7 @@ export class DraftComponent implements OnInit {
     }
   }
 
-  public moveToChoixJoueur(position: string, precision: string, nbPlayer: number): void {
+  public moveToPlayerChoice(position: string, precision: string, nbPlayer: number): void {
     this.router.navigate(['/choix', position, precision, nbPlayer])
   }
 
