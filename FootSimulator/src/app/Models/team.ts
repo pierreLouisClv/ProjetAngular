@@ -4,7 +4,7 @@ import {Classmate} from "./classmate";
 export interface Team {
   name: string;
   pathLogo: string;
-  strengthPoints:number;
-  stats:TeamStatistics;
-  owner:Classmate;
+  strengthPoints: number;
+  stats: TeamStatistics;
+  owner: Classmate;
 }

@@ -7,27 +7,26 @@ import {Team} from "../../Models/team";
 import {Classmate} from "../../Models/classmate";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ApiService {
 
-    private apiUrl: string = 'http://localhost:3000';
+  private apiUrl: string = 'http://localhost:3000';
 
-    constructor(private http: HttpClient, private playerService: PlayerCreatorService) {
+  constructor(private http: HttpClient, private playerService: PlayerCreatorService) {
 
-    }
+  }
 
-    public getTeams(): Observable<Team[]> {
-      return this.http.get<Team[]>(`${this.apiUrl}/teams`);
-    }
+  public getTeams(): Observable<Team[]> {
+    return this.http.get<Team[]>(`${this.apiUrl}/teams`);
+  }
 
-    public getPlayerByPosition(position: string): Player {
-        return this.playerService.CreateFromObservable(this.http.get<Player[]>(`${this.apiUrl}/${position}`));
-    }
+  public getPlayerByPosition(position: string): Player {
+    return this.playerService.CreateFromObservable(this.http.get<Player[]>(`${this.apiUrl}/${position}`));
+  }
 
-    public getMiageNames(): Observable<Classmate[]>
-    {
-      return this.http.get<Classmate[]>(`${this.apiUrl}/classmates`);
-    }
+  public getMiageNames(): Observable<Classmate[]> {
+    return this.http.get<Classmate[]>(`${this.apiUrl}/classmates`);
+  }
 
 }

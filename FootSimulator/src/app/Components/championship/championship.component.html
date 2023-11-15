@@ -13,22 +13,30 @@
       </div>
       <div class="col">
         <div class="reload">
-          <button class="reset" (click)="resetSchedule()">Réinitialiser le calendrier<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
-            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
-          </svg></button>
+          <button class="reset" (click)="resetSchedule()">Réinitialiser le calendrier
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+              <path
+                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+            </svg>
+          </button>
         </div>
         <div class="schedule">
           <div class="d-flex justify-content-center days mb-3 mt-2">
             <button *ngIf="currentDay > 1" class="btn" (click)="showTeams(-1)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                   class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                <path
+                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
               </svg>
             </button>
             <p class="mt-1 jDay">J{{currentDay}}</p>
             <button *ngIf="currentDay < 38" class="btn" (click)="showTeams(1)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                   class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path
+                  d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
               </svg>
             </button>
           </div>
@@ -40,7 +48,8 @@
                 {{match.getDomTeam().name}}
               </td>
               <ng-template #domTeamName>
-                <td data-toggle="tooltip" data-placement="right" title="{{match.getDomTeam().owner.name}}" class="teamName align-right">
+                <td data-toggle="tooltip" data-placement="right" title="{{match.getDomTeam().owner.name}}"
+                    class="teamName align-right">
                   {{match.getDomTeam().name}}
                 </td>
               </ng-template>
@@ -50,7 +59,8 @@
               </td>
 
               <td>
-                <input class="score middle" *ngIf="match.getIsScoreModified(); else domScore" type="number" [(ngModel)]="match.getScore()[0]">
+                <input class="score middle" *ngIf="match.getIsScoreModified(); else domScore" type="number"
+                       [(ngModel)]="match.getScore()[0]">
                 <ng-template #domScore>
                   <p class="goals middle">{{match.getScore()[0]}}</p>
                 </ng-template>
@@ -61,7 +71,8 @@
               </td>
 
               <td>
-                <input class="score middle" *ngIf="match.getIsScoreModified(); else extScore" type="number" [(ngModel)]="match.getScore()[1]">
+                <input class="score middle" *ngIf="match.getIsScoreModified(); else extScore" type="number"
+                       [(ngModel)]="match.getScore()[1]">
                 <ng-template class="middle" #extScore>
                   <p class="goals middle">{{match.getScore()[1]}}</p>
                 </ng-template>
@@ -75,13 +86,15 @@
                 {{match.getExtTeam().name}}
               </td>
               <ng-template #extTeamName>
-                <td data-toggle="tooltip" data-placement="right" title="{{match.getExtTeam().owner.name}}" class="teamName align-left">
+                <td data-toggle="tooltip" data-placement="right" title="{{match.getExtTeam().owner.name}}"
+                    class="teamName align-left">
                   {{match.getExtTeam().name}}
                 </td>
               </ng-template>
 
               <td>
-                <button class="btn button" *ngIf="match.getIsScoreModified(); else modifyButton" (click)="closeScore(match)">
+                <button class="btn button" *ngIf="match.getIsScoreModified(); else modifyButton"
+                        (click)="closeScore(match)">
                   Valider
                 </button>
                 <ng-template #modifyButton>

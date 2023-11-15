@@ -1,58 +1,55 @@
-.logo{
-  height:22px;
-  width:auto;
+.logo {
+  height: 22px;
+  width: auto;
   padding-top: 0.5px;
   padding-bottom: 0.5px;
 }
 
-.teamContainer
-{
-  width:35px;
+.teamContainer {
+  width: 35px;
 }
 
-.teamTable{
-  border:0.5px;
+.teamTable {
+  border: 0.5px;
 }
 
-.teamName{
-  font-size :12px;
-  font-weight:bolder;
+.teamName {
+  font-size: 12px;
+  font-weight: bolder;
   text-align: left;
 }
 
-.numericValues{
-  font-size :12px;
+.numericValues {
+  font-size: 12px;
   text-align: center;
 }
 
-.headerValues{
-  font-size :14px;
+.headerValues {
+  font-size: 14px;
   font-weight: bolder;
   text-align: center;
 }
 
-.points{
-  font-size :14px;
+.points {
+  font-size: 14px;
   font-weight: bolder;
   text-align: center;
 }
 
-.ranking{
-  border:solid;
+.ranking {
+  border: solid;
   background-color: white;
 }
 
-.reload
-{
+.reload {
   text-align: right;
 }
 
-.button
-{
+.button {
   background-color: rgb(0, 0, 0, 0.7);
   transition: transform 0.2s;
   color: white;
-  border:none;
+  border: none;
 }
 
 .button:hover {

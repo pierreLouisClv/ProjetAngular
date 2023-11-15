@@ -24,8 +24,8 @@ import {TeamBuilderService} from "./Services/team-builder-service/team-builder.s
 import {RatingService} from "./Services/rating-service/rating.service";
 import {NgOptimizedImage} from "@angular/common";
 import {ApiService} from "./Services/api-service/api.service";
-import { HomepageComponent } from './Components/homepage/homepage.component';
-import { PresentationBannerComponent } from './Components/presentation-banner/presentation-banner.component';
+import {HomepageComponent} from './Components/homepage/homepage.component';
+import {PresentationBannerComponent} from './Components/presentation-banner/presentation-banner.component';
 
 @NgModule({
   declarations: [
@@ -40,16 +40,17 @@ import { PresentationBannerComponent } from './Components/presentation-banner/pr
     ChoixJoueurComponent,
     HomepageComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-      BrowserAnimationsModule,
-      NgOptimizedImage
-    ],
-  providers: [ApiService, ChampionshipSimulatorService, DayGenerator, ScoreGenerator, PlayerCreatorService,RandomPlayerService,DataService,TeamBuilderService,RatingService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    NgOptimizedImage
+  ],
+  providers: [ApiService, ChampionshipSimulatorService, DayGenerator, ScoreGenerator, PlayerCreatorService, RandomPlayerService, DataService, TeamBuilderService, RatingService],
 
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
