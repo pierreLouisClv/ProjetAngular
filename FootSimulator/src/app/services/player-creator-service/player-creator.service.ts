@@ -7,22 +7,22 @@ import {Player} from "../../Models/player";
 })
 export class PlayerCreatorService {
 
-    public CreateFromObservable(player: Observable<any>): Player {
+    public CreateFromObservable(player: Observable<Player[]>): Player {
         let playerData: any[];
-        let newJoueur = new Player();
-        player.subscribe((data: any[]) => {
+        let newPlayer = new Player();
+        player.subscribe((data) => {
             playerData = data;
             for (let i of playerData) {
-                newJoueur.setName(i.nom);
-                newJoueur.setClub(i.club);
-                newJoueur.setAge(i.age);
-                newJoueur.setNation(i.nationalite);
-                newJoueur.setId(i.ID);
-                newJoueur.setPicture(i.image);
-                newJoueur.setRating(i.note);
+                newPlayer.setName(i.nom);
+                newPlayer.setClub(i.club);
+                newPlayer.setAge(i.age);
+                newPlayer.setNation(i.nationalite);
+                newPlayer.setId(i.ID);
+                newPlayer.setPicture(i.image);
+                newPlayer.setRating(i.note);
             }
         });
-        return newJoueur;
+        return newPlayer;
     }
 
 }

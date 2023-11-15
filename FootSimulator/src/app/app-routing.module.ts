@@ -4,14 +4,14 @@ import {AppComponent} from "./app.component";
 import {ChampionshipComponent} from "./Composants/championship/championship.component";
 import {DraftComponent} from "./Composants/draft/draft.component";
 import {ChoixJoueurComponent} from "./Composants/player-choice/choix-joueur.component";
+import {HomepageComponent} from "./Composants/homepage/homepage.component";
 
 const routes: Routes = [
   {path: 'simulator', component:ChampionshipComponent},
   {path: 'draft', component: DraftComponent},
-  {path: 'choix/:position/:precision/:nbJoueur', component: ChoixJoueurComponent}
-
-
-  //{path:'', redirectTo:'homepage', pathMatch:'full'}
+  {path: 'choix/:position/:precision/:nbJoueur', component: ChoixJoueurComponent},
+  { path: '', component: HomepageComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

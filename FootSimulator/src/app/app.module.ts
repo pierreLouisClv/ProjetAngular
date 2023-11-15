@@ -24,6 +24,7 @@ import {TeamBuilderService} from "./services/team-builder-service/team-builder.s
 import {RatingService} from "./services/rating-service/rating.service";
 import {NgOptimizedImage} from "@angular/common";
 import {ApiService} from "./services/api-service/api.service";
+import { HomepageComponent } from './Composants/homepage/homepage.component';
 import { PresentationBannerComponent } from './Composants/presentation-banner/presentation-banner.component';
 
 @NgModule({
@@ -35,7 +36,9 @@ import { PresentationBannerComponent } from './Composants/presentation-banner/pr
     RankingComponent,
     DraftComponent,
     ChoixJoueurComponent,
-    PresentationBannerComponent
+    PresentationBannerComponent,
+    ChoixJoueurComponent,
+    HomepageComponent
   ],
     imports: [
         BrowserModule,

@@ -346,12 +346,12 @@
   "defenseurDroit1": [
     {
       "ID": 1,
-      "nom": "Trent Alexander-Arnold",
+      "nom": "Alexander-Arnold",
       "age": 23,
       "nationalite": "Angleterre",
       "club": "Liverpool",
       "note": 87,
-      "image": "../../../assets/Trent Alexander-Arnold.jpg"
+      "image": "../../../assets/Alexander-Arnold.jpg"
     }
   ],
   "defenseurDroit2": [

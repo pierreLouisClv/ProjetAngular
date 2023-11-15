@@ -22,7 +22,7 @@ export class ApiService {
     }
 
     public getPlayerByPosition(position: string): Player {
-        return this.playerService.CreateFromObservable(this.http.get<Player>(`${this.apiUrl}/${position}`));
+        return this.playerService.CreateFromObservable(this.http.get<Player[]>(`${this.apiUrl}/${position}`));
     }
 
     public getMiageNames(): Observable<Classmate[]>

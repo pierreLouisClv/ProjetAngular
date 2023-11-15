@@ -1,0 +1,52 @@
+.background {
+  background-image: url('../../../assets/terrain.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.linkContainer{
+  background-color: rgb(0, 0, 0, 0.7);
+  height: 25vw;
+  width: 30vw;
+  border-radius: 25%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.linkContainer:hover{
+  transform: scale(1.1);
+}
+
+.section{
+  font-family: "Baskerville Old Face", sans-serif;
+  font-size: 2vw;
+}
+
+.link{
+  text-decoration: none;
+  color:white;
+}
+
+.image{
+  height: 11vw;
+  border-radius: 5%;
+}
+
+.slogan{
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 17px;
+  color:lightblue;
+}
+
+.logo-text {
+  font-family: "Baskerville Old Face", sans-serif;
+  font-size: 3vw;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-style {
+  width: 100%;
+  text-align: center;
+}

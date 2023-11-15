@@ -1,0 +1,83 @@
+<app-header></app-header>
+<div class="container">
+  <button class="btn btn-warning" *ngIf="!isLaunched" (click)="showTeams()">Commencer la simulation</button>
+  <div class="row mt-3" *ngIf="isLaunched">
+    <div class="col-6">
+      <app-ranking></app-ranking>
+    </div>
+    <div class="col">
+      <div class="schedule">
+        <div class="d-flex justify-content-center days mb-3 mt-2">
+          <button *ngIf="currentDay > 1" class="btn" (click)="showTeams(-1)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+              <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+            </svg>
+          </button>
+          <p class="mt-1 jDay">J{{currentDay}}</p>
+          <button *ngIf="currentDay < 38" class="btn" (click)="showTeams(1)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+            </svg>
+          </button>
+        </div>
+        <table class="table table-striped">
+
+          <tr class="teamTable" *ngFor="let match of showedMatchs">
+
+            <td class="teamName align-right">
+              {{match.getDomTeam().name}}
+            </td>
+
+            <td>
+              <img class="logo" src="{{match.getDomTeam().pathLogo}}">
+            </td>
+
+            <td>
+              <input class="score middle" *ngIf="match.getIsScoreModified(); else domScore" type="number" [(ngModel)]="match.getScore()[0]">
+              <ng-template #domScore>
+                {{match.getScore()[0]}}
+              </ng-template>
+            </td>
+
+            <td class="middle bolder">
+              -
+            </td>
+
+            <td>
+              <input class="score middle" *ngIf="match.getIsScoreModified(); else extScore" type="number" [(ngModel)]="match.getScore()[1]">
+              <ng-template class="middle" #extScore>
+                {{match.getScore()[1]}}
+              </ng-template>
+            </td>
+
+            <td>
+              <img class="logo" src="{{match.getExtTeam().pathLogo}}">
+            </td>
+
+            <td class="teamName align-left">
+              {{match.getExtTeam().name}}
+            </td>
+
+            <td>
+              <button class="btn button confirm" *ngIf="match.getIsScoreModified(); else modifyButton" (click)="closeScore(match)">
+                Valider
+              </button>
+              <ng-template #modifyButton>
+                <button class="btn button modify" (click)="modifyScore(match)">
+                  Modifier
+                </button>
+              </ng-template>
+            </td>
+
+            <td>
+              <button class="btn button simulation" (click)="simulate(match)">
+                Simuler
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <app-simulation-form-component></app-simulation-form-component>
+    </div>
+  </div>
+</div>
