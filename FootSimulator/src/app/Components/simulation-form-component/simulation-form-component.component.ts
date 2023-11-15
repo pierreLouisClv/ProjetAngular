@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {
   ChampionshipSimulatorService
-} from "../../services/simulation-services/championship-simulator.service";
+} from "../../Services/simulation-services/championship-simulator.service";
 
 @Component({
   selector: 'app-simulation-form-component',

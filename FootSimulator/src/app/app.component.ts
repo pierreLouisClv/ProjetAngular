@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {ChampionshipSimulatorService} from "./services/simulation-services/championship-simulator.service";
+import {ChampionshipSimulatorService} from "./Services/simulation-services/championship-simulator.service";
 import {Team} from "./Models/team";
-import {ApiService} from "./services/api-service/api.service";
+import {ApiService} from "./Services/api-service/api.service";
 
 @Component({
   selector: 'app-root',

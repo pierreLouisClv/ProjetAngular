@@ -41,7 +41,7 @@
               <td>
                 <input class="score middle" *ngIf="match.getIsScoreModified(); else domScore" type="number" [(ngModel)]="match.getScore()[0]">
                 <ng-template #domScore>
-                  {{match.getScore()[0]}}
+                  <p class="goals middle">{{match.getScore()[0]}}</p>
                 </ng-template>
               </td>
 
@@ -52,7 +52,7 @@
               <td>
                 <input class="score middle" *ngIf="match.getIsScoreModified(); else extScore" type="number" [(ngModel)]="match.getScore()[1]">
                 <ng-template class="middle" #extScore>
-                  {{match.getScore()[1]}}
+                  <p class="goals middle">{{match.getScore()[1]}}</p>
                 </ng-template>
               </td>
 

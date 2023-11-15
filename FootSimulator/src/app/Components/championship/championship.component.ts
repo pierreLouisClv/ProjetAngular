@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {
   ChampionshipSimulatorService
-} from "../../services/simulation-services/championship-simulator.service";
+} from "../../Services/simulation-services/championship-simulator.service";
 import {Match} from "../../Models/Simulation/Schedule/match";
-import {Team} from "../../Models/team";
-import {ApiService} from "../../services/api-service/api.service";
 
 @Component({
   selector: 'app-championship',

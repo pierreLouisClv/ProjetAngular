@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {RandomPlayerService} from "../../services/random-player-service/random-player.service";
+import {RandomPlayerService} from "../../Services/random-player-service/random-player.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {DataService} from "../../services/data-service/data.service";
+import {DataService} from "../../Services/data-service/data.service";
 import {Player} from "../../Models/player";
-import {RatingService} from "../../services/rating-service/rating.service";
+import {RatingService} from "../../Services/rating-service/rating.service";
 
 @Component({
     selector: 'app-player-choice',

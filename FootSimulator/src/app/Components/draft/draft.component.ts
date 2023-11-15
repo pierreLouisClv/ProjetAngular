@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {DataService} from "../../services/data-service/data.service";
-import {TeamBuilderService} from "../../services/team-builder-service/team-builder.service";
-import {RatingService} from "../../services/rating-service/rating.service";
+import {DataService} from "../../Services/data-service/data.service";
+import {TeamBuilderService} from "../../Services/team-builder-service/team-builder.service";
+import {RatingService} from "../../Services/rating-service/rating.service";
 import {Player} from "../../Models/player";
 
 @Component({
