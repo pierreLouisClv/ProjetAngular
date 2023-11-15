@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from "./app.component";
-import {ChampionshipComponent} from "./Composants/Simulator/Renders/championship/championship.component";
+import {ChampionshipComponent} from "./Composants/championship/championship.component";
 import {DraftComponent} from "./Composants/draft/draft.component";
 import {ChoixJoueurComponent} from "./Composants/player-choice/choix-joueur.component";
 

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {Player} from "../../Model/Player";
+import {Player} from "../../Models/player";
 
 @Injectable({
     providedIn: 'root'

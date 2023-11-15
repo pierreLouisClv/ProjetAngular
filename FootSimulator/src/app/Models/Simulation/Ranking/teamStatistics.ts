@@ -1,5 +1,5 @@
-import {Match} from "../Schedule/Match";
-import {EnumResult} from "../Schedule/EnumResult";
+import {Match} from "../Schedule/match";
+import {EnumResult} from "../Schedule/enumResult";
 
 export class TeamStatistics {
   private daysPlayed:number;
@@ -26,43 +26,43 @@ export class TeamStatistics {
     this.looses = 0;
   }
 
-  public getDaysPlayed()
+  public getDaysPlayed():number
   {
     return this.daysPlayed;
   }
-  public getPoints()
+  public getPoints():number
   {
     return this.points;
   }
-  public getGoalsScored()
+  public getGoalsScored():number
   {
     return this.goalsScored;
   }
-  public getGoalsConceded()
+  public getGoalsConceded():number
   {
     return this.goalsConceded;
   }
-  public getWins()
+  public getWins():number
   {
     return this.wins;
   }
 
-  public getDraws()
+  public getDraws():number
   {
     return this.draws;
   }
 
-  public getLooses()
+  public getLooses():number
   {
     return this.looses;
   }
 
-  public getGoalsDifference()
+  public getGoalsDifference():number
   {
     return this.goalsScored - this.goalsConceded;
   }
 
-  public addMatchStats(_goalsScored:number, _goalsConceded:number)
+  public addMatchStats(_goalsScored:number, _goalsConceded:number):void
   {
     this.daysPlayed ++;
     this.goalsScored += _goalsScored;
@@ -82,17 +82,6 @@ export class TeamStatistics {
     {
       this.looses ++;
     }
-  }
-
-  public reset()
-  {
-    this.daysPlayed = 0;
-    this.points = 0;
-    this.goalsScored = 0;
-    this.goalsConceded = 0;
-    this.wins = 0;
-    this.draws = 0;
-    this.looses = 0;
   }
 
 }

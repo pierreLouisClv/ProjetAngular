@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import {ChampionshipSimulatorService} from "../../../../services/Championship_Simulation/championship-simulator.service";
-import {Team} from "../../../../Models/Team";
+import {Component} from '@angular/core';
+import {
+  ChampionshipSimulatorService
+} from "../../services/simulation-services/championship-simulator.service";
+import {Team} from "../../Models/team";
 
 @Component({
   selector: 'app-ranking',
@@ -9,7 +11,7 @@ import {Team} from "../../../../Models/Team";
 })
 export class RankingComponent {
 
-  ranking:Team[];
+  public ranking:Team[];
 
   constructor(private simulator:ChampionshipSimulatorService) {
     this.ranking = simulator.getChampionship().getRanking().getTeamsRankedByPosition();

@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {
   ChampionshipSimulatorService
-} from "../../../../services/Championship_Simulation/championship-simulator.service";
-import {Match} from "../../../../Models/Simulation/Schedule/Match";
+} from "../../services/simulation-services/championship-simulator.service";
+import {Match} from "../../Models/Simulation/Schedule/match";
+import {Team} from "../../Models/team";
+import {ApiService} from "../../services/api-service/api.service";
 
 @Component({
   selector: 'app-championship',
@@ -10,25 +12,28 @@ import {Match} from "../../../../Models/Simulation/Schedule/Match";
   styleUrls: ['./championship.component.scss']
 })
 export class ChampionshipComponent implements OnInit{
-  currentDay:number;
+  public currentDay:number;
 
-  showedMatchs:Match[];
+  public showedMatchs:Match[];
 
-  isLaunched:boolean;
+  public isPresentation:boolean;
 
   constructor(private simulator:ChampionshipSimulatorService) {
     this.currentDay = 1;
     this.showedMatchs = [];
-    this.isLaunched = false;
+    this.isPresentation = false;
   }
   ngOnInit(){
-    console.log("heho")
     this.showTeams();
+  }
+
+  public activeModePresentation():void
+  {
+    this.isPresentation = !this.isPresentation;
   }
 
   public showTeams(_dayCounter:number = 0)
   {
-    this.isLaunched = true;
     this.showMatchsOfTheCurrentDay(_dayCounter);
   }
 
@@ -45,13 +50,12 @@ export class ChampionshipComponent implements OnInit{
   {
     if(match.getScore()[0] == null || match.getScore()[1] == null)
     {
-      console.log("Le match entre " + match.getDomTeam().name + " et " + match.getExtTeam().name + " n'a pas été modifié.");
+      console.log("Le match entre " + match.getDomTeam().name + " et " + match.getExtTeam().name + " n'a pas pu être modifié.");
     }
     else
     {
       match.setIsMatchPlayed(true);
       match.setIsScoreModified(false);
-      console.log(match.getIsScoreModified());
     }
   }
 

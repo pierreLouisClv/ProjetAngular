@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {DataService} from "../../services/data-service/data.service";
 import {TeamBuilderService} from "../../services/team-builder-service/team-builder.service";
 import {RatingService} from "../../services/rating-service/rating.service";
-import {Player} from "../../Model/Player";
+import {Player} from "../../Models/player";
 
 @Component({
     selector: 'app-draft',

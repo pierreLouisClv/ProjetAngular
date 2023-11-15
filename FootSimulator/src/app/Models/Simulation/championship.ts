@@ -1,15 +1,15 @@
-import {Schedule} from "./Schedule/Schedule";
-import {Ranking} from "./Ranking/Ranking";
-import {Team} from "../Team";
-import {Day} from "./Schedule/Day";
-import {Match} from "./Schedule/Match";
+import {Schedule} from "./Schedule/schedule";
+import {Ranking} from "./Ranking/ranking";
+import {Team} from "../team";
+import {Day} from "./Schedule/day";
+import {Match} from "./Schedule/match";
 
 export class Championship {
 
   // Calendrier
   private schedule:Schedule;
 
-  // Ranking
+  // Classement
   private ranking:Ranking;
 
   // Participants à la compétition
@@ -19,12 +19,6 @@ export class Championship {
     this.competitors = _competitors;
     this.schedule = new Schedule(_competitors.size);
     this.ranking = new Ranking(_competitors)
-    // Récupération des équipes enregistrées
-  }
-
-  public setCompetitors(_teams:Set<Team>)
-  {
-    this.competitors = _teams;
   }
 
   public getCompetitors():Set<Team>
@@ -37,28 +31,12 @@ export class Championship {
     return this.schedule;
   }
 
-  public setSchedule(_schedule:Schedule)
-  {
-    this.schedule = _schedule;
-  }
-
   public getRanking():Ranking
   {
     return this.ranking;
   }
 
-  public setRanking(_ranking:Ranking)
-  {
-    this.ranking = _ranking;
-  }
-
-  public getCompetitorsNumber():number
-  {
-    return this.competitors.size;
-  }
-
-
-  public setDaysOfSchedule(_days:Day[])
+  public setDaysOfSchedule(_days:Day[]):void
   {
     this.schedule.setResults(_days);
   }

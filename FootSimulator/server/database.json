@@ -2,83 +2,103 @@
   "teams": [
     {
       "name": "Paris SG",
-      "pathLogo": "https://static.flashscore.com/res/image/data/EskJufg5-06Ua3sOf.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/EskJufg5-06Ua3sOf.png",
+      "strengthPoints": 25
     },
     {
       "name": "O. de Marseille",
-      "pathLogo": "https://static.flashscore.com/res/image/data/AwlBhPfM-voNnDKJK.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/AwlBhPfM-voNnDKJK.png",
+      "strengthPoints": 20
     },
     {
       "name": "O. Lyonnais",
-      "pathLogo": "https://static.flashscore.com/res/image/data/rytJfXyS-GU4hlIMk.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/rytJfXyS-GU4hlIMk.png",
+      "strengthPoints": 15
     },
     {
       "name": "AS Monaco",
-      "pathLogo": "https://static.flashscore.com/res/image/data/GzvUVteM-44KQTmnj.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/GzvUVteM-44KQTmnj.png",
+      "strengthPoints": 20
     },
     {
       "name": "Lille OSC",
-      "pathLogo": "https://static.flashscore.com/res/image/data/Y91hQAzS-UDticXKP.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/Y91hQAzS-UDticXKP.png",
+      "strengthPoints": 17
     },
     {
       "name": "AS Saint-Étienne",
-      "pathLogo": "https://static.flashscore.com/res/image/data/b7wgpIDa-8Ca53MKO.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/b7wgpIDa-8Ca53MKO.png",
+      "strengthPoints": 9
     },
     {
       "name": "OGC Nice",
-      "pathLogo": "https://static.flashscore.com/res/image/data/boyRUvyB-00sqJmg8.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/boyRUvyB-00sqJmg8.png",
+      "strengthPoints": 16
     },
     {
       "name": "G. de Bordeaux",
-      "pathLogo": "https://static.flashscore.com/res/image/data/6RuIKSWg-6BghNX0a.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/6RuIKSWg-6BghNX0a.png",
+      "strengthPoints": 8
     },
     {
       "name": "Toulouse FC",
-      "pathLogo": "https://static.flashscore.com/res/image/data/ImntO9e5-COxgbCEm.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/ImntO9e5-COxgbCEm.png",
+      "strengthPoints": 11
     },
     {
       "name": "RC Lens",
-      "pathLogo": "https://static.flashscore.com/res/image/data/jqg52CDa-rTEFAmVL.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/jqg52CDa-rTEFAmVL.png",
+      "strengthPoints": 16
     },
     {
       "name": "FC Nantes",
-      "pathLogo": "https://static.flashscore.com/res/image/data/nZSxLDZA-AmtNBe9p.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/nZSxLDZA-AmtNBe9p.png",
+      "strengthPoints": 10
     },
     {
       "name": "Angers SCO",
-      "pathLogo": "https://static.flashscore.com/res/image/data/t8LjlaWg-z9nPuk2r.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/t8LjlaWg-z9nPuk2r.png",
+      "strengthPoints": 6
     },
     {
       "name": "Montpellier HSC",
-      "pathLogo": "https://static.flashscore.com/res/image/data/4QDVStDa-n3xBmVJB.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/4QDVStDa-n3xBmVJB.png",
+      "strengthPoints": 11
     },
     {
       "name": "Stade de Reims",
-      "pathLogo": "https://static.flashscore.com/res/image/data/4Sf2DneM-8Cw7lB45.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/4Sf2DneM-8Cw7lB45.png",
+      "strengthPoints": 12
     },
     {
       "name": "Stade Rennais",
-      "pathLogo": "https://static.flashscore.com/res/image/data/IsanuwAr-Y5eozcI6.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/IsanuwAr-Y5eozcI6.png",
+      "strengthPoints": 16
     },
     {
       "name": "FC Metz",
-      "pathLogo": "https://static.flashscore.com/res/image/data/4MoVp0h5-pztT5vMl.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/4MoVp0h5-pztT5vMl.png",
+      "strengthPoints": 6
     },
     {
       "name": "RC Strasbourg",
-      "pathLogo": "https://static.flashscore.com/res/image/data/Muh3TJDa-lAc5wKNp.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/Muh3TJDa-lAc5wKNp.png",
+      "strengthPoints": 9
     },
     {
       "name": "Clermont Foot",
-      "pathLogo": "https://static.flashscore.com/res/image/data/O6jfFPdM-pztT5vMl.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/O6jfFPdM-pztT5vMl.png",
+      "strengthPoints": 7
     },
     {
       "name": "FC Lorient",
-      "pathLogo": "https://static.flashscore.com/res/image/data/lxyXOLFG-GU4hlIMk.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/lxyXOLFG-GU4hlIMk.png",
+      "strengthPoints": 9
     },
     {
       "name": "Stade Brestois",
-      "pathLogo": "https://static.flashscore.com/res/image/data/r9aDJ9eM-Q15G9lAm.png"
+      "pathLogo": "https://static.flashscore.com/res/image/data/r9aDJ9eM-Q15G9lAm.png",
+      "strengthPoints": 9
     }
   ],
   "gardien1": [
@@ -597,6 +617,69 @@
       "note": 87,
       "image": "../../../assets/Gareth Bale.jpg"
     }
+  ],
+  "classmates": [
+    {
+      "name": "Samra"
+    },
+    {
+      "name": "Lilia"
+    },
+    {
+      "name": "Meryam"
+    },
+    {
+      "name": "Myriam"
+    },
+    {
+      "name": "Haoyue"
+    },
+    {
+      "name": "Emma"
+    },
+    {
+      "name": "Pauline"
+    },
+    {
+      "name": "Nabila"
+    },
+    {
+      "name": "Gabriela"
+    },
+    {
+      "name": "Andra"
+    },
+    {
+      "name": "Amel"
+    },
+    {
+      "name": "Hugo"
+    },
+    {
+      "name": "Quentin"
+    },
+    {
+      "name": "Chadi"
+    },
+    {
+      "name": "Arezki"
+    },
+    {
+      "name": "Louis"
+    },
+    {
+      "name": "Paul-Cézar"
+    },
+    {
+      "name": "Etienne"
+    },
+    {
+      "name": "Imane"
+    },
+    {
+      "name": "Linda"
+    }
+
   ]
 }
 

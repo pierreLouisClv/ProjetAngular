@@ -4,17 +4,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
-import {ChampionshipComponent} from './Composants/Simulator/Renders/championship/championship.component';
-import {ChampionshipSimulatorService} from "./services/Championship_Simulation/championship-simulator.service";
-import {DayGenerator} from "./services/Championship_Simulation/DayGenerator";
+import {ChampionshipComponent} from './Composants/championship/championship.component';
+import {ChampionshipSimulatorService} from "./services/simulation-services/championship-simulator.service";
+import {DayGenerator} from "./services/simulation-services/dayGenerator";
 import {FormsModule} from "@angular/forms";
-import {ScoreGenerator} from "./services/Championship_Simulation/ScoreGenerator";
+import {ScoreGenerator} from "./services/simulation-services/scoreGenerator";
 import {
   SimulationFormComponentComponent
-} from './Composants/Simulator/Forms/simulation-form-component/simulation-form-component.component';
-import {RankingComponent} from './Composants/Simulator/Renders/ranking/ranking.component';
+} from './Composants/simulation-form-component/simulation-form-component.component';
+import {RankingComponent} from './Composants/ranking/ranking.component';
 import {HeaderComponent} from './Composants/header/header.component';
-import {FooterComponent} from './Composants/footer/footer.component';
 import {PlayerCreatorService} from "./services/player-creator-service/player-creator.service";
 import {DraftComponent} from './Composants/draft/draft.component';
 import {ChoixJoueurComponent} from './Composants/player-choice/choix-joueur.component';
@@ -25,17 +24,18 @@ import {TeamBuilderService} from "./services/team-builder-service/team-builder.s
 import {RatingService} from "./services/rating-service/rating.service";
 import {NgOptimizedImage} from "@angular/common";
 import {ApiService} from "./services/api-service/api.service";
+import { PresentationBannerComponent } from './Composants/presentation-banner/presentation-banner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     ChampionshipComponent,
     SimulationFormComponentComponent,
     RankingComponent,
     DraftComponent,
-    ChoixJoueurComponent
+    ChoixJoueurComponent,
+    PresentationBannerComponent
   ],
     imports: [
         BrowserModule,

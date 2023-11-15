@@ -1,7 +1,7 @@
-import {Component, NgModule} from '@angular/core';
+import {Component} from '@angular/core';
 import {
   ChampionshipSimulatorService
-} from "../../../../services/Championship_Simulation/championship-simulator.service";
+} from "../../services/simulation-services/championship-simulator.service";
 
 @Component({
   selector: 'app-simulation-form-component',
@@ -10,19 +10,19 @@ import {
 })
 export class SimulationFormComponentComponent {
 
-  allDaysNumber:number[];
+  public allDaysNumber:number[];
 
-  firstDayToSimulate:number;
+  public firstDayToSimulate:number;
 
-  nbOfDayToSimulate:number;
+  public nbOfDayToSimulate:number;
 
   constructor(private simulator:ChampionshipSimulatorService) {
-    this.allDaysNumber = this.genereAllDaysNumber();
+    this.allDaysNumber = this.generateAllDaysNumber();
     this.firstDayToSimulate = this.allDaysNumber[0];
     this.nbOfDayToSimulate = 1;
   }
 
-  public genereAllDaysNumber()
+  public generateAllDaysNumber()
   {
     let dayNb = this.simulator.getSchedule().getDayNumber();
     let numberList = new Array<number>()

@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {PlayerCreatorService} from "../player-creator-service/player-creator.service";
-import {Player} from "../../Model/Player";
-import {Team} from "../../Models/Team";
+import {Player} from "../../Models/player";
+import {Team} from "../../Models/team";
+import {Classmate} from "../../Models/classmate";
 
 @Injectable({
     providedIn: 'root'
@@ -22,6 +23,11 @@ export class ApiService {
 
     public getPlayerByPosition(position: string): Player {
         return this.playerService.CreateFromObservable(this.http.get<Player>(`${this.apiUrl}/${position}`));
+    }
+
+    public getMiageNames(): Observable<Classmate[]>
+    {
+      return this.http.get<Classmate[]>(`${this.apiUrl}/classmates`);
     }
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {ChampionshipSimulatorService} from "./services/Championship_Simulation/championship-simulator.service";
-import {Team} from "./Models/Team";
+import {ChampionshipSimulatorService} from "./services/simulation-services/championship-simulator.service";
+import {Team} from "./Models/team";
 import {ApiService} from "./services/api-service/api.service";
 
 @Component({

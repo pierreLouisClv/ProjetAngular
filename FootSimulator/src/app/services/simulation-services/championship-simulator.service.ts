@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
-import {Championship} from "../../Models/Simulation/Championship"
-import {DayGenerator} from "./DayGenerator";
-import {Team} from "../../Models/Team";
-import {Match} from "../../Models/Simulation/Schedule/Match";
-import {ScoreGenerator} from "./ScoreGenerator";
-import {Day} from "../../Models/Simulation/Schedule/Day";
+import {Championship} from "../../Models/Simulation/championship"
+import {DayGenerator} from "./dayGenerator";
+import {Team} from "../../Models/team";
+import {Match} from "../../Models/Simulation/Schedule/match";
+import {ScoreGenerator} from "./scoreGenerator";
+import {Day} from "../../Models/Simulation/Schedule/day";
+import {Schedule} from "../../Models/Simulation/Schedule/schedule";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class ChampionshipSimulatorService {
   ) {
   }
 
-  public initChampionship(_competitors:Set<Team>){
+  public initChampionship(_competitors:Set<Team>):void
+  {
     this.championship = new Championship(_competitors);
     this.championship.setDaysOfSchedule(this.dayGenerator.generateDays(this.championship.getCompetitors()));
     this.championship.initRanking();
@@ -30,41 +32,25 @@ export class ChampionshipSimulatorService {
     return this.championship.foundMatchsByDay(_day);
   }
 
-  public getChampionship():any
+  public getChampionship():Championship
   {
     return this.championship;
   }
 
-  public setChampionship(_championship:Championship)
-  {
-    this.championship = _championship;
-  }
-
-  public setCompetitors(data:any[])
-  {
-    let teams:Set<Team> = new Set<Team>();
-    this.championship.setCompetitors(teams);
-  }
-
-  public getCompetitors() :Set<any>
-  {
-    return this.championship.getCompetitors();
-  }
-
-  public getSchedule()
+  public getSchedule():Schedule
   {
     return this.championship.getSchedule();
   }
 
-  public simulateScore(match:Match)
+  public simulateScore(_match:Match):void
   {
-    this.scoreGenerator.generateRandomWinner(match);
-    this.scoreGenerator.generateRandomScore(match);
-    match.setIsScoreModified(false);
-    match.setIsMatchPlayed(true);
+    this.scoreGenerator.generateRandomWinner(_match);
+    this.scoreGenerator.generateRandomScore(_match);
+    _match.setIsScoreModified(false);
+    _match.setIsMatchPlayed(true);
   }
 
-  public simulateDays(_startingDay:number, _dayRange:number)
+  public simulateDays(_startingDay:number, _dayRange:number):void
   {
     let dayToSimulate:Day[] = this.championship.getDays(_startingDay, _dayRange);
     for (let day of dayToSimulate)
@@ -76,7 +62,7 @@ export class ChampionshipSimulatorService {
     }
   }
 
-  public updateRanking()
+  public updateRanking():void
   {
     this.championship.resetRanking();
     for (let results of this.getSchedule().getResults())
@@ -92,7 +78,7 @@ export class ChampionshipSimulatorService {
     }
   }
 
-  private isDayComplete(_results:Day)
+  private isDayComplete(_results:Day):boolean
   {
     for (let match of _results.getResults())
     {

@@ -1,18 +1,14 @@
-import {Team} from "../../Team";
-import {TeamStatistics} from "./TeamStatistics";
+import {Team} from "../../team";
+import {TeamStatistics} from "./teamStatistics";
 
 export class Ranking {
   private teamsRankedByPosition:Team[];
 
-  private daysPlayed:number;
-
   constructor(_competitors:Set<Team>) {
-    // Attention à ne pas conserver la référence du tab
     this.teamsRankedByPosition = Array.from(_competitors);
-    this.daysPlayed = 0;
   }
 
-  public reset()
+  public reset():void
   {
     for (let team of this.teamsRankedByPosition)
     {
@@ -20,7 +16,7 @@ export class Ranking {
     }
   }
 
-  public updateTeamsPositions()
+  public updateTeamsPositions():void
   {
     this.teamsRankedByPosition.sort((_team1:Team, _team2:Team) => {
         let returnNb:number;
@@ -39,7 +35,7 @@ export class Ranking {
 
   }
 
-  public comparePoints(_team1:Team, _team2:Team)
+  public comparePoints(_team1:Team, _team2:Team):1|-1|0
   {
     if (_team1.stats.getPoints() > _team2.stats.getPoints())
     {
@@ -55,7 +51,7 @@ export class Ranking {
     }
   }
 
-  public compareGoalsDifference(_team1:Team, _team2:Team)
+  public compareGoalsDifference(_team1:Team, _team2:Team):1|-1|0
   {
     if (_team1.stats.getGoalsDifference() > _team2.stats.getGoalsDifference())
     {
@@ -71,7 +67,7 @@ export class Ranking {
     }
   }
 
-  public compareGoalsScored(_team1:Team, _team2:Team)
+  public compareGoalsScored(_team1:Team, _team2:Team):1|-1|0
   {
     if (_team1.stats.getGoalsScored() > _team2.stats.getGoalsScored())
     {
@@ -87,12 +83,12 @@ export class Ranking {
     }
   }
 
-  public getTeamsRankedByPosition()
+  public getTeamsRankedByPosition():Team[]
   {
     return this.teamsRankedByPosition;
   }
 
-  public setTeamsRankedByPosition(_teams:Set<Team>)
+  public setTeamsRankedByPosition(_teams:Set<Team>):void
   {
     this.teamsRankedByPosition = Array.from(_teams);
   }

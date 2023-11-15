@@ -1,7 +1,12 @@
 <div class="champ">
-  <div class="container pt-2">
-    <button class="btn btn-warning" *ngIf="!isLaunched" (click)="showTeams()">Commencer la simulation</button>
-    <div class="row mt-3" *ngIf="isLaunched">
+  <div class="container">
+    <div class="d-flex flex-row-reverse pt-2">
+      <button class="btn button" (click)="activeModePresentation()">
+        Mode Présentation
+      </button>
+    </div>
+    <app-presentation-banner *ngIf="isPresentation"></app-presentation-banner>
+    <div class="row pt-2 mt-3">
       <div class="col-6">
         <app-ranking></app-ranking>
       </div>

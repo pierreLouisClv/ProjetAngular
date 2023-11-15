@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RandomPlayerService} from "../../services/random-player-service/random-player.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DataService} from "../../services/data-service/data.service";
-import {Player} from "../../Model/Player";
+import {Player} from "../../Models/player";
 import {RatingService} from "../../services/rating-service/rating.service";
 
 @Component({

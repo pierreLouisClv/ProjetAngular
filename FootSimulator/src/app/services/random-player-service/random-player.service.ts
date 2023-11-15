@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {ApiService} from "../api-service/api.service";
 import {TeamBuilderService} from "../team-builder-service/team-builder.service";
-import {Player} from "../../Model/Player";
+import {Player} from "../../Models/player";
 
 @Injectable({
     providedIn: 'root'
