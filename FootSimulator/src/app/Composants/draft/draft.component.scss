@@ -3,7 +3,7 @@
   background-image: url('../../../assets/terrain.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 105%;
+  height: 100%;
 }
 
 .repeat {
@@ -38,6 +38,13 @@
   color: white;
   width: 150px;
   text-align: center;
+  font-size: 17px;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+.poste{
+  font-size: 20px;
+  font-family: "Comic Sans MS", sans-serif;
 }
 
 .photo {

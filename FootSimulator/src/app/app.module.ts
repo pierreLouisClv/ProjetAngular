@@ -25,6 +25,7 @@ import {TeamBuilderService} from "./services/team-builder-service/team-builder.s
 import {RatingService} from "./services/rating-service/rating.service";
 import {NgOptimizedImage} from "@angular/common";
 import {ApiService} from "./services/api-service/api.service";
+import { HomepageComponent } from './Composants/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {ApiService} from "./services/api-service/api.service";
     SimulationFormComponentComponent,
     RankingComponent,
     DraftComponent,
-    ChoixJoueurComponent
+    ChoixJoueurComponent,
+    HomepageComponent
   ],
     imports: [
         BrowserModule,
