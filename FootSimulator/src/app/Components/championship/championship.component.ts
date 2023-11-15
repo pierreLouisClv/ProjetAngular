@@ -62,10 +62,14 @@ export class ChampionshipComponent implements OnInit{
     match.setIsScoreModified(true);
   }
 
-  public simulate(match:Match)
+  public simulate(match:Match):void
   {
     console.log(match);
     this.simulator.simulateScore(match);
   }
 
+  public resetSchedule():void
+  {
+    this.simulator.initChampionship(this.simulator.getChampionship().getCompetitors());
+  }
 }

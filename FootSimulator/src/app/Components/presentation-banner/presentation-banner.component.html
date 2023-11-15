@@ -1,4 +1,4 @@
-<div *ngIf="!areTeamNamesOk" class="row pt-2">
+<div *ngIf="!areTeamNamesOk" class="row pt-4">
   <div class="col-5">
     <div class="d-flex flex-wrap">
       <img class="logo" *ngFor="let team of teams" src="{{team.pathLogo}}">
@@ -7,6 +7,19 @@
   <div class="col-5">
     <div class="d-flex flex-wrap names">
       <p class="name" *ngFor="let classmate of names">{{classmate.name}}</p>
+    </div>
+  </div>
+  <div class="col-2">
+    <button type="submit" class="name button" (click)="randomizeTeamOwners()" name="">GO</button>
+  </div>
+</div>
+<div *ngIf="areTeamNamesOk" class="row pt-4">
+  <div class="col-10">
+    <div class="d-flex flex-wrap names">
+      <div *ngFor="let team of teams">
+        <img class="logo"  src="{{team.pathLogo}}">
+        <p class="name">{{team.owner.name}}</p>
+      </div>
     </div>
   </div>
   <div class="col-2">

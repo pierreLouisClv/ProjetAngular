@@ -20,7 +20,12 @@
   </thead>
   <tr class="teamTable" *ngFor="let team of ranking">
     <td class="teamContainer"><img class="logo" src="{{team.pathLogo}}"></td>
-    <td class="teamName">{{team.name}}</td>
+    <td *ngIf="team.owner == undefined; else teamName" class="teamName">{{team.name}}</td>
+    <ng-template #teamName>
+      <td data-toggle="tooltip" data-placement="right" title="{{team.owner.name}}" class="teamName">
+        {{team.name}}
+      </td>
+    </ng-template>
     <td class="numericValues">{{team.stats.getDaysPlayed()}}</td>
     <td class="numericValues">{{team.stats.getWins()}}</td>
     <td class="numericValues">{{team.stats.getDraws()}}</td>

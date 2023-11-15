@@ -12,6 +12,8 @@ import {Schedule} from "../../Models/Simulation/Schedule/schedule";
 })
 export class ChampionshipSimulatorService {
 
+  private isStrengthPointsActivated! :boolean;
+
   private championship!: Championship;
 
   constructor(
@@ -25,6 +27,7 @@ export class ChampionshipSimulatorService {
     this.championship = new Championship(_competitors);
     this.championship.setDaysOfSchedule(this.dayGenerator.generateDays(this.championship.getCompetitors()));
     this.championship.initRanking();
+    this.isStrengthPointsActivated = true;
   }
 
   public getMatchsOfOneDay(_day:number):Set<any>
@@ -44,7 +47,7 @@ export class ChampionshipSimulatorService {
 
   public simulateScore(_match:Match):void
   {
-    this.scoreGenerator.generateRandomWinner(_match);
+    this.scoreGenerator.generateRandomWinner(_match, this.isStrengthPointsActivated);
     this.scoreGenerator.generateRandomScore(_match);
     _match.setIsScoreModified(false);
     _match.setIsMatchPlayed(true);
@@ -88,5 +91,10 @@ export class ChampionshipSimulatorService {
       }
     }
     return true;
+  }
+
+  public setIsStrengthPointsActivated(_isActivated:boolean):void
+  {
+    this.isStrengthPointsActivated = _isActivated;
   }
 }

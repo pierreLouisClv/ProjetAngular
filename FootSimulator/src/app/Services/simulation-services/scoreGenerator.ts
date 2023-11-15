@@ -4,33 +4,31 @@ import {ScoreProbabilities} from "../../Utils/scoreProbabilities";
 
 export class ScoreGenerator
 {
-  private IS_STRENGTH_POINTS_ACTIVATED :boolean = true;
-
   private HOME_ADVANTAGE_STRENGTH_POINTS :number = 4;
 
   private DRAW_RESULTS_PROBABILITY :number = 0.35;
 
-  public generateRandomWinner(match:Match):void
+  public generateRandomWinner(_match:Match, _isStrengthPointsActivated:boolean):void
   {
-    if (this.IS_STRENGTH_POINTS_ACTIVATED)
+    if (_isStrengthPointsActivated)
     {
-      let result:EnumResult = this.generateRandomResultIncludingStrengthPoints(match.getDomTeam().strengthPoints, match.getExtTeam().strengthPoints);
-      match.setEnumResult(result);
+      let result:EnumResult = this.generateRandomResultIncludingStrengthPoints(_match.getDomTeam().strengthPoints, _match.getExtTeam().strengthPoints);
+      _match.setEnumResult(result);
     }
     else
     {
       let randomInt:number = Math.floor( Math.random() * 3);
       if(randomInt == 0)
       {
-        match.setEnumResult(EnumResult.D);
+        _match.setEnumResult(EnumResult.D);
       }
       else if(randomInt == 1)
       {
-        match.setEnumResult(EnumResult.N);
+        _match.setEnumResult(EnumResult.N);
       }
       else
       {
-        match.setEnumResult(EnumResult.E);
+        _match.setEnumResult(EnumResult.E);
       }
     }
   }
